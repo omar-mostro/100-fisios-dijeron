@@ -15,7 +15,7 @@ body {
     margin: 0 auto;
 }
 
-.pregunta {
+.pregunta, .respuesta {
     width: 100%;
     color: #fae312;
     padding-top: 10px;
@@ -29,10 +29,15 @@ body {
 
 .pregunta span:after {
     overflow: hidden;
-    content: " ........................................................................................................................"
+    content: " ..........................................................................................................................."
 }
 
-.conteo-equipo-1{
+.respuesta .valor:after {
+    overflow: hidden;
+    content: " ........................."
+}
+
+.conteo-equipo-1 {
     position: relative;
     top: -48px;
     left: 103px;
@@ -41,9 +46,13 @@ body {
     width: 128px;
 }
 
-.conteo-equipo-1 p{
+.conteo-equipo-1 p {
     font-size: 2em;
     text-align: center;
     margin: 0;
     color: #fae312;
+}
+
+.hand{
+    cursor: pointer;
 }

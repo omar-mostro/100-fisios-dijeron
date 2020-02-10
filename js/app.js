@@ -1,20 +1,18 @@
 new Vue({
     el: '#app',
     data: {
-        destaparPregunta1: false,
-        preguntas1: [
-          'test 1',
-          'test 2',
-          'test 3',
-          'test 4',
-          'test 5',
-          'test 6',
-          'test 7',
+        puntuacionRonda: 0,
+        respuestas1: [
+          {valor: 'test 1', mostrar: false, puntuacion: 50},
+          {valor: 'test 2', mostrar: false, puntuacion: 20},
+          {valor: 'test 3', mostrar: false, puntuacion: 20},
+          {valor: 'test 4', mostrar: false, puntuacion: 10},
         ]
     },
     methods: {
-        destaparPregunta: function () {
-            this.destaparPregunta1 = true
+        destaparRespuesta: function (nombreArrayRespuestas, index) {
+            this[nombreArrayRespuestas][index].mostrar = true;
+            this.puntuacionRonda = this[nombreArrayRespuestas][index].puntuacion + this.puntuacionRonda;
         }
     }
 });

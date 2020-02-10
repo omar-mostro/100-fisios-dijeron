@@ -18,7 +18,7 @@
             </div>
             <div class="col-6">
                 <div class="equipo-2 float-right">
-                    <button @click="destaparPregunta" class="btn btn-info">Asignar puntos a equipo 2</button>
+                    <button class="btn btn-info">Asignar puntos a equipo 2</button>
                 </div>
             </div>
         </div>
@@ -28,38 +28,23 @@
             <div class="col-12">
 
 
-                <div class="contenedor-preguntas" @click="destaparPregunta">
-                    <div v-if="!destaparPregunta1" class="pregunta" >
-                        <span>1</span>
-                    </div>
-                    <div v-if="destaparPregunta1" class="pregunta destapar-pregunta1">
-                        <span>Los remostros</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>2</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>3</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>4</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>5</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>6</span>
-                    </div>
-                    <div class="pregunta">
-                        <span>7</span>
-                    </div>
+                <div class="contenedor-preguntas">
+                    <section v-for="(respuesta, index) in respuestas1">
+                        <div v-if="!respuesta.mostrar" class="pregunta hand" @click="destaparRespuesta('respuestas1', index)">
+                            <span>{{index + 1}}</span>
+                        </div>
+                        <div v-else class="respuesta">
+                            <span class="valor">{{respuesta.valor}} </span>
+                            <span class="float-right pr-3">{{respuesta.puntuacion}}</span>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="conteo-equipo-1">
-        <p>200</p>
+        <p>{{puntuacionRonda}}</p>
     </div>
 </div>
 <script src="js/app.js"></script>
