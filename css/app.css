@@ -1,0 +1,49 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+.contenedor-preguntas {
+    width: 60%;
+    background-color: #0a0a0a;
+    position: relative;
+    height: 41vh;
+    top: 130px;
+    margin: 0 auto;
+}
+
+.pregunta {
+    width: 100%;
+    color: #fae312;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.pregunta span {
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.pregunta span:after {
+    overflow: hidden;
+    content: " ........................................................................................................................"
+}
+
+.conteo-equipo-1{
+    position: relative;
+    top: -48px;
+    left: 103px;
+    background-color: #000;
+    height: 41px;
+    width: 128px;
+}
+
+.conteo-equipo-1 p{
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    color: #fae312;
+}
