@@ -35,7 +35,7 @@ body {
 
 .puntuacion-equipo{
     position: relative;
-    bottom: 40px;
+    bottom: 20px;
     height: 4.4em;
     width: 57%;
     background-color: #000000;
@@ -52,7 +52,8 @@ body {
 .pregunta, .respuesta {
     width: 100%;
     color: #fae312;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 5px;
 }
 
