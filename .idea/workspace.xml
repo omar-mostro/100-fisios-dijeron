@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bdf1b1f-d01a-43a5-adcb-83412e9d2828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/audio/respuesta-correcta.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audio/vamos-a-jugar.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -28,7 +30,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/audio" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -40,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="O:\Vue\100-fisios-dijeron\audio" />
       <recent name="E:\Documentos\StarCraft II\100-fisios-dijeron\images" />
       <recent name="O:\Vue\100-fisios-dijeron\js" />
       <recent name="O:\Vue\100-fisios-dijeron\css" />
@@ -57,7 +60,7 @@
       <updated>1581305558037</updated>
       <workItem from="1581305565343" duration="9489000" />
       <workItem from="1581375423344" duration="6252000" />
-      <workItem from="1581390977499" duration="4910000" />
+      <workItem from="1581390977499" duration="6603000" />
     </task>
     <servers />
   </component>

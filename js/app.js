@@ -326,11 +326,40 @@ new Vue({
           puntuacion: 15
         }
       ],
+      respuestas13: [
+        {
+          valor: '1 Manos',
+          mostrar: false,
+          puntuacion: 40
+        },
+        {
+          valor: '2 Piernas',
+          mostrar: false,
+          puntuacion: 30
+        },
+        {
+          valor: '3 Abdomen',
+          mostrar: false,
+          puntuacion: 15
+        },
+        {
+          valor: '4 Pompas',
+          mostrar: false,
+          puntuacion: 10
+        },
+        {
+          valor: '5 Ojos',
+          mostrar: false,
+          puntuacion: 5
+        }
+      ],
     }
 
   },
   methods: {
     destaparRespuesta: function (index) {
+      var audio = new Audio("audio/respuesta-correcta.mp3");
+      audio.play();
       this.arrayRespuestas['respuestas'+this.respuestaActual][index].mostrar = true
       this.puntuacionRonda = this.arrayRespuestas['respuestas'+this.respuestaActual][index].puntuacion + this.puntuacionRonda
     },
@@ -349,6 +378,9 @@ new Vue({
         alert('Se acabaron las preguntas');
         return;
       }
+
+      var audio = new Audio("audio/vamos-a-jugar.mp3");
+      audio.play();
 
       this.respuestaActual++;
       this.contarPuntuacionRonda = true;

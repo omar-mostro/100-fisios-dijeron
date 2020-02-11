@@ -39,7 +39,6 @@
                     <section v-for="(respuestas, indexArrayRespuestas) of arrayRespuestas">
                         <section v-if="indexArrayRespuestas == 'respuestas'+respuestaActual"
                                  v-for="(respuesta, index) in respuestas">
-
                             <div v-if="!respuesta.mostrar" class="pregunta hand"
                                  @click="destaparRespuesta(index)">
                                 <span class="pr-1">{{index + 1}} ..........................................................................................................................................................................................................</span>
