@@ -1,3 +1,7 @@
+[v-cloak] {
+    display: none
+}
+
 body {
     background-image: url("../images/background.jpg");
     background-position: center;
@@ -11,29 +15,29 @@ body {
     background-color: #0a0a0a;
     position: relative;
     height: 41vh;
-    top: 98px;
+    top: 20%;
     margin: 0 auto;
     border-radius: 10px;
 }
 
 #puntuacion-ronda {
     position: relative;
-    top: 87px;
-    height: 4.4em;
-    width: 38%;
     background-color: #000000;
     border-radius: 10px;
+    top: 13%;
+    height: 2em;
+    width: 35%;
 }
 
-#puntuacion-ronda p{
+#puntuacion-ronda p {
     color: #fae312;
     margin: 0;
-    font-size: 3em;
+    font-size: 2.4em;
     text-align: center;
 }
 
 
-.puntuacion-equipo{
+.puntuacion-equipo {
     position: relative;
     bottom: 20px;
     height: 4.4em;
@@ -42,14 +46,17 @@ body {
     border-radius: 10px;
 }
 
-.puntuacion-equipo p{
+.puntuacion-equipo p {
     color: #fae312;
     margin: 0;
     font-size: 2.5em;
     text-align: center;
 }
 
-.pregunta, .respuesta {
+.pregunta,
+.respuesta {
+    display: flex;
+    align-items: center;
     width: 100%;
     color: #fae312;
     padding-top: 5px;
@@ -57,19 +64,12 @@ body {
     padding-left: 5px;
 }
 
-.pregunta span {
+.pregunta span,
+.respuesta .valor{
+    flex: 1;
+    white-space: nowrap;
     overflow: hidden;
-    white-space: nowrap
-}
-
-.pregunta span:after {
-    overflow: hidden;
-    content: " ..........................................................................................................................."
-}
-
-.respuesta .valor:after {
-    overflow: hidden;
-    content: " ........................."
+    text-overflow: ellipsis;
 }
 
 .conteo-equipo-1 {
@@ -91,4 +91,12 @@ body {
 
 .hand {
     cursor: pointer;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
