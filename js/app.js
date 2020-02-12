@@ -1,6 +1,7 @@
 new Vue({
   el: '#app',
   data: {
+    rondaRecienIniciada: true,
     respuestaActual: 1,
     contarPuntuacionRonda: true,
     puntuacionRonda: 0,
@@ -358,15 +359,18 @@ new Vue({
   },
   methods: {
     destaparRespuesta: function (index) {
-      var audio = new Audio("audio/respuesta-correcta.mp3");
-      audio.play();
-      this.arrayRespuestas['respuestas'+this.respuestaActual][index].mostrar = true
-      this.puntuacionRonda = this.arrayRespuestas['respuestas'+this.respuestaActual][index].puntuacion + this.puntuacionRonda
+      this.rondaRecienIniciada = false
+      var audio = new Audio('audio/respuesta-correcta.mp3')
+      audio.play()
+      this.arrayRespuestas['respuestas' + this.respuestaActual][index].mostrar = true
+      if (this.contarPuntuacionRonda) {
+        this.puntuacionRonda = this.arrayRespuestas['respuestas' + this.respuestaActual][index].puntuacion + this.puntuacionRonda
+      }
     },
     asignarPuntosEquipo: function (numEquipo) {
 
-      if (!this.contarPuntuacionRonda){
-        return;
+      if (!this.contarPuntuacionRonda) {
+        return
       }
 
       this['puntuacionEquipo' + numEquipo] = this['puntuacionEquipo' + numEquipo] + this.puntuacionRonda
@@ -374,16 +378,28 @@ new Vue({
       this.contarPuntuacionRonda = false
     },
     siguientePregunta: function () {
-      if (this.respuestaActual >= Object.keys(this.arrayRespuestas).length){
-        alert('Se acabaron las preguntas');
-        return;
+
+      if (this.rondaRecienIniciada) {
+        alert('Debes jugar esta ronda antes de continuar con la siguiente')
+        return
       }
 
-      var audio = new Audio("audio/vamos-a-jugar.mp3");
-      audio.play();
+      if (this.puntuacionRonda > 0) {
+        alert('Debes asignar los puntos a un equipo antes de pasar a la siguiente ronda')
+        return
+      }
 
-      this.respuestaActual++;
-      this.contarPuntuacionRonda = true;
+      if (this.respuestaActual >= Object.keys(this.arrayRespuestas).length) {
+        alert('Se acabaron las preguntas')
+        return
+      }
+
+      var audio = new Audio('audio/vamos-a-jugar.mp3')
+      audio.play()
+
+      this.respuestaActual++
+      this.contarPuntuacionRonda = true
+      this.rondaRecienIniciada = true
       this.puntuacionRonda = 0
     }
   }
