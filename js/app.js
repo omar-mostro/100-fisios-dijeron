@@ -354,7 +354,8 @@ new Vue({
           puntuacion: 5
         }
       ],
-    }
+    },
+    strikes: []
 
   },
   methods: {
@@ -377,7 +378,7 @@ new Vue({
       this.puntuacionRonda = 0
       this.contarPuntuacionRonda = false
     },
-    siguientePregunta: function () {
+    siguienteRonda: function () {
 
       if (this.rondaRecienIniciada) {
         alert('Debes jugar esta ronda antes de continuar con la siguiente')
@@ -401,6 +402,13 @@ new Vue({
       this.contarPuntuacionRonda = true
       this.rondaRecienIniciada = true
       this.puntuacionRonda = 0
+      this.strikes = []
+    },
+
+    marcarStrike: function () {
+      if (this.strikes.length < 3) {
+        this.strikes.push('X')
+      }
     }
   }
 })

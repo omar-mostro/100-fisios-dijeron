@@ -62,9 +62,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="strikes text-center">
-                    <i class="fas fa-times"></i>
-                    <i class="fas fa-times"></i>
-                    <i class="fas fa-times"></i>
+                    <i v-for="strike of strikes" class="fas fa-times"></i>
                 </div>
             </div>
         </div>
@@ -74,10 +72,10 @@
                 <p class="text-white h4">Pregunta: {{respuestaActual}}</p>
             </div>
             <div class="col-6 text-center">
-                <button class="btn btn-light" @click="siguientePregunta">Siguiente pregunta</button>
+                <button class="btn btn-light" @click="siguienteRonda">Siguiente pregunta</button>
             </div>
             <div class="col-3 text-center">
-                <button class="btn btn-danger mr-2">Strike</button>
+                <button class="btn btn-danger mr-2" @click="marcarStrike">Strike</button>
             </div>
         </div>
     </div>
