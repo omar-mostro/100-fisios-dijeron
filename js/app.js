@@ -361,8 +361,7 @@ new Vue({
   methods: {
     destaparRespuesta: function (index) {
       this.rondaRecienIniciada = false
-      var audio = new Audio('audio/respuesta-correcta.mp3')
-      audio.play()
+      this.reproducirAudio('audio/respuesta-correcta.mp3');
       this.arrayRespuestas['respuestas' + this.respuestaActual][index].mostrar = true
       if (this.contarPuntuacionRonda) {
         this.puntuacionRonda = this.arrayRespuestas['respuestas' + this.respuestaActual][index].puntuacion + this.puntuacionRonda
@@ -373,6 +372,8 @@ new Vue({
       if (!this.contarPuntuacionRonda) {
         return
       }
+
+      this.reproducirAudio('audio/triunfo.mp3');
 
       this['puntuacionEquipo' + numEquipo] = this['puntuacionEquipo' + numEquipo] + this.puntuacionRonda
       this.puntuacionRonda = 0
@@ -395,8 +396,7 @@ new Vue({
         return
       }
 
-      var audio = new Audio('audio/vamos-a-jugar.mp3')
-      audio.play()
+      this.reproducirAudio('audio/vamos-a-jugar.mp3');
 
       this.respuestaActual++
       this.contarPuntuacionRonda = true
@@ -407,8 +407,13 @@ new Vue({
 
     marcarStrike: function () {
       if (this.strikes.length < 3) {
+        this.reproducirAudio('audio/respuesta-incorrecta.mp3');
         this.strikes.push('X')
       }
+    },
+    reproducirAudio(audioSource){
+      const audio = new Audio(audioSource)
+      audio.play()
     }
   }
 })
