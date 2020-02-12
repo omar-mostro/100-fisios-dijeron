@@ -24,8 +24,8 @@ body {
     position: relative;
     background-color: #000000;
     border-radius: 10px;
-    top: 13%;
-    height: 2em;
+    top: 19%;
+    height: 4em;
     width: 35%;
 }
 
@@ -39,7 +39,7 @@ body {
 
 .puntuacion-equipo {
     position: relative;
-    bottom: 20px;
+    top: 55px;
     height: 4.4em;
     width: 57%;
     background-color: #000000;
@@ -94,9 +94,17 @@ body {
 }
 
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+.strikes{
+    background-color: #0a0a0a;
+    width: 32%;
+    margin: 5px auto;
+    border-radius: 10px;
+    color: #c64d44;
+    font-size: 3em;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+
+.strikes i {
+    padding: 10px;
+    border: 2px solid #c64d44;
+    border-radius: 10px;
 }

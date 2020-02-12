@@ -6,6 +6,7 @@
     <script src="js/vue.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
 <div id="app" v-cloak>
@@ -30,7 +31,7 @@
                     <p>{{puntuacionEquipo1}}</p>
                 </div>
             </div>
-            <div class="col-6" style="height: 85vh">
+            <div class="col-6" style="height: 65vh">
                 <div id="puntuacion-ronda" class="mx-auto">
                     <p v-if="contarPuntuacionRonda">{{puntuacionRonda}}</p>
                     <p v-else>0</p>
@@ -50,6 +51,7 @@
                         </section>
                     </section>
                 </div>
+
             </div>
             <div class="col-3 align-self-center ">
                 <div class="mx-auto puntuacion-equipo">
@@ -57,13 +59,25 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-3">
+            <div class="col-12">
+                <div class="strikes text-center">
+                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-3 text-center">
                 <p class="text-white h4">Pregunta: {{respuestaActual}}</p>
             </div>
             <div class="col-6 text-center">
                 <button class="btn btn-light" @click="siguientePregunta">Siguiente pregunta</button>
+            </div>
+            <div class="col-3 text-center">
+                <button class="btn btn-danger mr-2">Strike</button>
             </div>
         </div>
     </div>
